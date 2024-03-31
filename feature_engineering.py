@@ -15,6 +15,8 @@ def engineer_features():
     data.replace({'Residence_type': {'Urban':0, 'Rural':1}}, inplace=True)
     data.replace({'smoking_status': {'formerly smoked':0, 'never smoked':1, 'smokes':2, 'Unknown':3}}, inplace=True)
 
+    data.drop(['stroke'], axis=1, inplace=True)
+
     data.to_csv('stroke_cleansed_data.csv', index=False)
 
     return data
